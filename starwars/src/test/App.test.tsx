@@ -11,7 +11,6 @@ describe("App Component Routing", () => {
             </MemoryRouter>
         );
 
-        // Check for elements specific to CharacterList
         expect(screen.getByText(/Star Wars Characters/i)).toBeInTheDocument();
         expect(screen.getByPlaceholderText(/Search by name/i)).toBeInTheDocument();
     });
@@ -23,7 +22,6 @@ describe("App Component Routing", () => {
             </MemoryRouter>
         );
 
-        // Check for elements unique to CharacterDetails
         expect(screen.getByText(/Loading character details.../i)).toBeInTheDocument();
         expect(screen.getByText(/Back to Character List/i)).toBeInTheDocument();
     });
@@ -35,7 +33,6 @@ describe("App Component Routing", () => {
             </MemoryRouter>
         );
 
-        // Check for elements unique to FavouritesView
         const favourites = screen.getAllByText(/Favourites/i); // Get all elements matching "Favourites"
         expect(favourites[1]).toBeInTheDocument(); // Assert that the second "Favourites" link is in the document
         expect(screen.getByText(/No favourites added yet!/i)).toBeInTheDocument();
